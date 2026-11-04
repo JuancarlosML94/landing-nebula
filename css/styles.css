@@ -1,26 +1,33 @@
-/* Estilos base generales */
+/* --- Estilos base generales (Fondo principal oscuro espacial) --- */
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #0b0f19; /* Azul espacio muy oscuro / casi negro */
+    color: #cbd5e1;            /* Texto general en gris claro para mayor legibilidad */
     line-height: 1.6;
 }
 
+/* Navbar (Negro espacial sólido con línea de separación) */
 header {
-    background-color: #111;
+    background-color: #05070c;
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    border-bottom: 1px solid #1e293b;
 }
 
 header nav a {
-    color: #fff;
+    color: #cbd5e1;
     text-decoration: none;
     margin-left: 1.5rem;
+    transition: color 0.2s;
+}
+
+header nav a:hover {
+    color: #ffffff;
 }
 
 main {
@@ -29,12 +36,19 @@ main {
     padding: 0 1rem;
 }
 
+/* Secciones de contenido: gris-azulado oscuro para destacar sobre el fondo del body */
 section {
     margin-bottom: 3rem;
-    background: #fff;
+    background: #131c2e; 
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    border: 1px solid #1e293b;
+}
+
+/* Forzar que los títulos dentro de las secciones se vean blancos y nítidos */
+section h1, section h2, section h3 {
+    color: #ffffff;
 }
 
 .gallery-grid {
@@ -48,33 +62,66 @@ section {
     margin: 0;
 }
 
-/* Botón de contacto profesional */
-.btn-contacto {
-    display: inline-block;
-    background-color: #0066cc;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 1rem;
-    transition: background-color 0.2s;
-}
-
-.btn-contacto:hover {
-    background-color: #004d99;
-}
-
+/* Footer (Fondo oscuro para cerrar con contraste) */
 footer {
     text-align: center;
     padding: 1.5rem;
-    background-color: #111;
-    color: #fff;
+    background-color: #05070c;
+    color: #94a3b8;
+    border-top: 1px solid #1e293b;
 }
 
 /* Hacer que todas las imágenes y vídeos sean responsivos */
 img, video {
     max-width: 100%;
     height: auto;
+    display: block;
+}
+
+/* --- Ajustes para el Logotipo en el Header --- */
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
+}
+
+.artist-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* --- Ajustes para el Botón de Contacto con GIF Animado --- */
+.btn-contacto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background-color: #2563eb; /* Azul brillante atractivo */
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-contacto:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.btn-gif {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
     display: block;
 }

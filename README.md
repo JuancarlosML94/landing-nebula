@@ -10,6 +10,8 @@ Proyecto de desarrollo web frontend realizado como práctica/portfolio para el c
 
 * **Multimedia nativa**: Uso de etiquetas `<video>` y `<audio>` con controles y optimización de carga.
 
+* **Git Hub Pages**: https://juancarlosml94.github.io/landing-nebula/
+
 ## Estructura del proyecto
 
 ```text

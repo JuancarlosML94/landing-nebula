@@ -10,9 +10,14 @@
 
     <header>
         <div class="logo-container">
-            <!-- Logotipo integrado con sus atributos WPO y accesibilidad -->
+            <!-- Logotipo en SVG inline integrado en el DOM -->
             <a href="#" class="brand-link">
-                <img src="assets/img/letra-n.png" alt="Logotipo de Nébula" width="30" height="30" class="logo-img">
+                <svg class="logo-svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logotipo de Nébula">
+                    <!-- Fondo o forma geométrica del icono -->
+                    <rect width="32" height="32" rx="6" fill="#1e293b"/>
+                    <!-- Letra N vectorial con trazo interactivo -->
+                    <path d="M10 22V10H13L19 19V10H22V22H19L13 13V22H10Z" fill="#3b82f6" class="svg-path"/>
+                </svg>
                 <span class="artist-name">Nébula</span>
             </a>
         </div>

@@ -125,3 +125,19 @@ img, video {
     object-fit: contain;
     display: block;
 }
+
+/* --- Estilos y transición para el SVG inline --- */
+.logo-svg {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover/focus sobre el SVG: cambia el color interno (fill) y escala ligeramente */
+.brand-link:hover .svg-path,
+.brand-link:focus .svg-path {
+    fill: #60a5fa; /* Un tono de azul más luminoso */
+}
+
+.brand-link:hover .logo-svg {
+    transform: scale(1.08); /* Pequeño zoom fluido */
+}

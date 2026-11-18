@@ -30,6 +30,7 @@
 
     <main>
         <!-- Sección Hero -->
+
         <section class="hero">
             <figure>
                 <img src="assets/img/hero-nebula.webp" alt="Paisaje de ciencia ficción creado por Nébula" width="1920" height="1080" loading="eager">
@@ -41,26 +42,30 @@
             </div>
         </section>
 
-        <!-- Sección de Galería -->
+        <!-- Sección de Galería Dinámica -->
+
         <section id="galeria" class="gallery">
             <h2>Trabajos Destacados</h2>
+            
+            <!-- Visor de la imagen principal que cambiará con JavaScript -->
+            <div class="gallery-viewer">
+                <figure>
+                    <img id="imagen-principal" src="assets/img/thumb-1.webp" alt="Visor principal de la galería" width="800" height="450">
+                    <figcaption id="caption-principal">Estación Orbital</figcaption>
+                </figure>
+            </div>
+
+            <!-- Miniaturas interactivas -->
+
             <div class="gallery-grid">
-                <figure>
-                    <img src="assets/img/thumb-1.webp" alt="Ilustración 1 de Nébula - Estación Orbital" width="400" height="250" loading="lazy">
-                    <figcaption>Estación Orbital</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img/thumb-2.webp" alt="Ilustración 2 de Nébula - Nebulosa de Orión" width="400" height="250" loading="lazy">
-                    <figcaption>Nebulosa de Orión</figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/img/thumb-3.webp" alt="Ilustración 3 de Nébula - Planeta Desértico" width="400" height="250" loading="lazy">
-                    <figcaption>Planeta Desértico</figcaption>
-                </figure>
+                <img src="assets/img/thumb-1.webp" alt="Estación Orbital" width="400" height="250" class="gallery-thumb activa" data-caption="Estación Orbital">
+                <img src="assets/img/thumb-2.webp" alt="Nebulosa de Orión" width="400" height="250" class="gallery-thumb" data-caption="Nebulosa de Orión">
+                <img src="assets/img/thumb-3.webp" alt="Planeta Desértico" width="400" height="250" class="gallery-thumb" data-caption="Planeta Desértico">
             </div>
         </section>
 
         <!-- Sección Multimedia (Vídeo y Audio) -->
+         
         <section id="multimedia" class="multimedia-section">
             <h2>Ambiente y Presentación</h2>
             
@@ -99,5 +104,8 @@
         <p>&copy; 2026 Nébula. Todos los derechos reservados.</p>
     </footer>
 
+<!-- Script de interactividad para la UT4 -->
+    <script src="js/main.js"></script>
+    
 </body>
 </html>

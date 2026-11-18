@@ -263,3 +263,59 @@ img, video {
 .modal-close:hover {
     color: #ffffff;
 }
+
+/* --- Estilos para el Reproductor de Audio Personalizado --- */
+
+.audio-custom-player {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #0b0f19;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #1e293b;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.audio-btn {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.audio-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Barra de progreso interactiva */
+.audio-progress-container {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #1e293b;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    min-width: 120px;
+}
+
+.audio-progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #3b82f6;
+    transition: width 0.1s linear;
+}
+
+.audio-time {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    min-width: 75px;
+    text-align: right;
+}

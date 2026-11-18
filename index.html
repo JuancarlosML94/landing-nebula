@@ -89,16 +89,34 @@
                 </div>
             </div>
 
+            <!-- Reproductor de Audio Personalizado con HTMLMediaElement -->
+
             <div class="audio-container">
                 <p>Escucha el ambiente sonoro del estudio:</p>
-                <audio controls preload="metadata">
+                
+                <!-- Etiqueta audio oculta o sin controles nativos para usar nuestros propios botones -->
+                <audio id="studio-audio" preload="metadata">
                     <source src="assets/audio/hero-audio.mp3" type="audio/mpeg">
                     Tu navegador no soporta audio.
                 </audio>
+
+                <!-- Panel de controles personalizados -->
+                <div class="audio-custom-player">
+                    <button id="btn-audio-play" class="audio-btn">▶ Reproducir</button>
+                    <button id="btn-audio-stop" class="audio-btn">⏹ Reiniciar</button>
+                    
+                    <!-- Barra de progreso del audio -->
+                    <div class="audio-progress-container" id="progress-container">
+                        <div class="audio-progress-bar" id="progress-bar"></div>
+                    </div>
+                    
+                    <span id="audio-time" class="audio-time">0:00 / 0:00</span>
+                </div>
             </div>
         </section>
 
-        <!-- Sección de Contacto con el Botón Animado (GIF) -->
+        <!-- Sección de Contacto con el Botón Animado -->
+
         <section id="contacto" class="contact">
             <h2>¿Hablamos de tu proyecto?</h2>
             <p>¿Interesado en encargos de arte conceptual o ilustraciones espaciales?</p>

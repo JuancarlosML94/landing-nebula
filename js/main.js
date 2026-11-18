@@ -63,3 +63,70 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+/* --- Lógica del Reproductor de Audio Personalizado --- */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("studio-audio");
+    const btnPlay = document.getElementById("btn-audio-play");
+    const btnStop = document.getElementById("btn-audio-stop");
+    const progressBar = document.getElementById("progress-bar");
+    const progressContainer = document.getElementById("progress-container");
+    const audioTime = document.getElementById("audio-time");
+
+    if (audio) {
+        // 1. Control de Play / Pause
+        btnPlay.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+                btnPlay.textContent = "⏸ Pausar";
+            } else {
+                audio.pause();
+                btnPlay.textContent = "▶ Reproducir";
+            }
+        });
+
+        // 2. Control de Stop / Reiniciar
+        btnStop.addEventListener("click", () => {
+            audio.pause();
+            audio.currentTime = 0;
+            btnPlay.textContent = "▶ Reproducir";
+            progressBar.style.width = "0%";
+        });
+
+        // 3. Actualizar la barra de progreso y el tiempo en pantalla mientras suena
+        audio.addEventListener("timeupdate", () => {
+            const currentMinutes = Math.floor(audio.currentTime / 60);
+            const currentSeconds = Math.floor(audio.currentTime % 60);
+            const formattedCurrent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`;
+
+            const durationMinutes = Math.floor(audio.duration / 60) || 0;
+            const durationSeconds = Math.floor(audio.duration % 60) || 0;
+            const formattedDuration = `${durationMinutes}:${durationSeconds < 10 ? '0' : ''}${durationSeconds}`;
+
+            audioTime.textContent = `${formattedCurrent} / ${formattedDuration}`;
+
+            // Porcentaje para la barra de progreso
+            if (audio.duration) {
+                const porcentaje = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = `${porcentaje}%`;
+            }
+        });
+
+        // 4. Permitir hacer clic en la barra de progreso para saltar a ese punto del audio
+        progressContainer.addEventListener("click", (e) => {
+            const rect = progressContainer.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const width = rect.width;
+            if (audio.duration) {
+                audio.currentTime = (clickX / width) * audio.duration;
+            }
+        });
+
+        // Al terminar el audio, restablecer el botón de reproducción
+        audio.addEventListener("ended", () => {
+            btnPlay.textContent = "▶ Reproducir";
+            progressBar.style.width = "0%";
+        });
+    }
+});

@@ -64,19 +64,29 @@
             </div>
         </section>
 
-        <!-- Sección Multimedia (Vídeo y Audio) -->
-         
+        <!-- Sección Multimedia: Audio y Modal de Vídeo -->
+
         <section id="multimedia" class="multimedia-section">
             <h2>Ambiente y Presentación</h2>
             
-            <div class="video-container">
-                <figure>
-                    <video controls width="800" height="450" preload="metadata">
+            <!-- Botón de impacto para abrir el Modal de Vídeo -->
+            <div class="video-trigger-container">
+                <p>Descubre el proceso de creación detrás de los universos digitales:</p>
+                <button id="btn-abrir-modal" class="btn-modal-trigger">
+                    Ver Reel de Animación
+                </button>
+            </div>
+
+            <!-- Estructura de la Ventana Modal (Oculta por defecto) -->
+            <div id="video-modal" class="modal-overlay">
+                <div class="modal-content">
+                    <button id="btn-cerrar-modal" class="modal-close">&times;</button>
+                    <h3>Reel de Animación 3D</h3>
+                    <video id="modal-video" controls width="800" height="450" preload="metadata">
                         <source src="assets/video/process-video.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de vídeos.
                     </video>
-                    <figcaption>Visualización 3D y diseño de entornos de ciencia ficción</figcaption>
-                </figure>
+                </div>
             </div>
 
             <div class="audio-container">
@@ -106,6 +116,6 @@
 
 <!-- Script de interactividad para la UT4 -->
     <script src="js/main.js"></script>
-    
+
 </body>
 </html>

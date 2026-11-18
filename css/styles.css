@@ -187,3 +187,79 @@ img, video {
     opacity: 1;
     border-color: #60a5fa;
 }
+
+/* --- Estilos para el Modal de Vídeo --- */
+
+.video-trigger-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.btn-modal-trigger {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem 1.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-modal-trigger:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Fondo oscuro translúcido que cubre toda la pantalla */
+
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 7, 12, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor interno del modal */
+
+.modal-content {
+    background-color: #131c2e;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #1e293b;
+    max-width: 850px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+/* Botón para cerrar la ventana modal */
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: #ffffff;
+}
